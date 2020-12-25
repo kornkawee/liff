@@ -20,12 +20,14 @@
   <p id="displayName"><b>displayName:</b> </p>
   <p id="statusMessage"><b>statusMessage:</b> </p>
 
+  
   <p id="decodedIDToken"><b>email:</b> </p>
   <p id="type"><b>type:</b> </p>
   <p id="viewType"><b>viewType:</b> </p>
   <p id="utouId"><b>utouId:</b> </p>
   <p id="roomId"><b>roomId:</b> </p>
   <p id="groupId"><b>groupId:</b> </p>
+
   <p id="friendship"><b>isFriendship:</b> </p>
   <p id="scanCode"><b>Code:</b> </p>
   <p id="isLoggedIn"><b>isLoggedIn:</b> </p>
@@ -74,6 +76,16 @@
     }
 
     function getContext() {
+      document.getElementById("type").append(liff.getContext().type)
+      //บอกประเภทของviewtype compac tall full!
+      document.getElementById("viewType").append(liff.getContext().viewType)
+      //แสดงการคคุยห้องแชท แบบ1on1
+      document.getElementById("utouId").append(liff.getContext().utouId)
+      //แสดงค่าของ Room id
+      document.getElementById("roomId").append(liff.getContext().roomId)
+      //id จากlinkในgroup เมื่อมีคนกดlinkจากgroup จะแสดงค่าของgroupIdด้วย
+      document.getElementById("groupId").append(liff.getContext().groupId)
+
     }
 
     async function getUserProfile() {
@@ -110,7 +122,7 @@
       await liff.init({ liffId: "1655482651-J3RAkx7E" })
       getEnvironment()
       getUserProfile()
-      // getContext()
+      getContext()
       // getFriendship()
       // createUniversalLink()
     }
