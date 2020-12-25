@@ -100,6 +100,17 @@
 
     }
 
+    function getProfile() {
+      liff.getProfile()
+.then(profile => {
+  const name = profile.displayName
+  document.getElementById("displayName").append(profile.displayName)
+})
+.catch((err) => {
+  console.log('error', err);
+});
+    }
+
     async function main() {
       // alert("LINE Developers x Skooldio")
       await liff.init({ liffId: "1655460208-AkpnEkeQ" })
