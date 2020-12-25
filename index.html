@@ -81,25 +81,9 @@ await liff.sendMessages([
   "packageId":1 
 },
 {
-  "type":"sticker",
-  "stickerId": 1,
-  "packageId":1 
-},
-{
-  "type":"sticker",
-  "stickerId": 1,
-  "packageId":1 
-},
-{
-  "type":"sticker",
-  "stickerId": 1,
-  "packageId":1 
-},
-{
-  "type":"sticker",
-  "stickerId": 1,
-  "packageId":1 
-}
+    type:'text',
+    text:'Hello, World!'
+  }
 ])
 alert("Message sent")
       }
@@ -120,7 +104,7 @@ alert("Message sent")
     }
 
     async function getUserProfile() {
-      const profile = await liff.getProfile()
+      const profile = await liff.getAccessToken()
       document.getElementById("pictureUrl").src = profile.pictureUrl
       document.getElementById("userId").append(profile.userId)
       document.getElementById("statusMessage").append(profile.statusMessage)
