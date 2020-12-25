@@ -18,6 +18,7 @@
   <img id="pictureUrl">
   <p id="userId"><b>userId:</b> </p>
   <p id="displayName"><b>displayName:</b> </p>
+  <p id="name"><b>name:</b> </p
   <p id="statusMessage"><b>statusMessage:</b> </p>
 
   
@@ -104,14 +105,20 @@ alert("Message sent")
     }
 
     async function getUserProfile() {
-      const profile = await liff.getAccessToken()
+      const profile = await liff.getProfile()
       document.getElementById("pictureUrl").src = profile.pictureUrl
       document.getElementById("userId").append(profile.userId)
       document.getElementById("statusMessage").append(profile.statusMessage)
       document.getElementById("displayName").append(profile.displayName)
       document.getElementById("decodedIDToken").append(liff.getDecodedIDToken().email)
 
-    
+      liff.getProfile()
+.then(profile => {
+  const name = profile.displayName
+})
+.catch((err) => {
+  console.log('error', err);
+});
     }
 
     function getEnvironment() {
