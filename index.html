@@ -46,8 +46,8 @@
     console.log("Hello World!")
   </script> -->
 
-  <!-- <script src="https://static.line-scdn.net/liff/edge/versions/2.6.0/sdk.js"></script> -->
-  <script src="https://static.line-scdn.net/liff/edge/2.1/liff.js"></script>
+  <script src="https://static.line-scdn.net/liff/edge/versions/2.6.0/sdk.js"></script>
+  <!-- <script src="https://static.line-scdn.net/liff/edge/2.1/liff.js"></script> -->
   <script>
     function createUniversalLink() {
     }
@@ -77,11 +77,14 @@
     }
 
     async function getUserProfile() {
-      const profile = await liff.init({ liffId: "1655482651-J3RAkx7E" }).getProfile()
+      const profile = await liff.getProfile()
       document.getElementById("pictureUrl").src = profile.pictureUrl
       document.getElementById("userId").append(profile.userId)
       document.getElementById("statusMessage").append(profile.statusMessage)
       document.getElementById("displayName").append(profile.displayName)
+      document.getElementById("decodedIDToken").append(liff.getDecodedIDToken().email)
+
+    
     }
 
     function getEnvironment() {
