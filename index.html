@@ -73,7 +73,7 @@
     function getContext() {
     }
 
-     function getUserProfile() {
+    async function getUserProfile() {
       const profile = await liff.getProfile()
       document.getElementById("pictureUrl").src = profile.pictureUrl
       document.getElementById("userId").append(profile.userId)
@@ -102,7 +102,7 @@
 
     async function main() {
       // alert("LINE Developers x Skooldio")
-      await liff.init({ liffId: "1655460208-3eXJ18Nz" })
+      await liff.init({ liffId: "1655482651-J3RAkx7E" })
       getEnvironment()
       getUserProfile()
       // getContext()
