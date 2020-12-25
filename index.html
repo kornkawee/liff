@@ -76,15 +76,16 @@
     async function sendMsg() {
       if(liff.getContext().type !== "none"){
 await liff.sendMessages([
+{
+    type:'text',
+    text:'Hello, World!'
+  },
   {
   "type":"sticker",
   "stickerId": 1,
   "packageId":1 
-},
-{
-    type:'text',
-    text:'Hello, World!'
-  }
+}
+
 ])
 alert("Message sent")
       }
@@ -106,11 +107,11 @@ alert("Message sent")
 
     async function getUserProfile() {
       const profile = await liff.getProfile()
-      document.getElementById("pictureUrl").src = profile.pictureUrl
-      document.getElementById("userId").append(profile.userId)
-      document.getElementById("statusMessage").append(profile.statusMessage)
-      document.getElementById("displayName").append(profile.displayName)
-      document.getElementById("decodedIDToken").append(liff.getDecodedIDToken().email)
+      // document.getElementById("pictureUrl").src = profile.pictureUrl
+      // document.getElementById("userId").append(profile.userId)
+      // document.getElementById("statusMessage").append(profile.statusMessage)
+      // document.getElementById("displayName").append(profile.displayName)
+      // document.getElementById("decodedIDToken").append(liff.getDecodedIDToken().email)
 
       liff.getProfile()
 .then(profile => {
