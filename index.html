@@ -17,7 +17,7 @@
 
   
   <img id="pictureUrl">
-  <p id="pictureUrl"><b>userId:</b> </p>
+  <p id="pictureUrl"><b>Profile:</b> </p>
   <p id="userId"><b>userId:</b> </p>
   <p id="displayName"><b>displayName:</b> </p>
   <p id="name"><b>name:</b> </p <p id="statusMessage"><b>statusMessage:</b> </p>
@@ -130,7 +130,8 @@
 
     async function getUserProfile() {
       const profile = await liff.getProfile()
-      document.getElementById("pictureUrl").src = profile.pictureUrl
+      // document.getElementById("pictureUrl").src = profile.pictureUrl
+      document.getElementById("pictureUrl").append(profile.pictureUrl)
       document.getElementById("userId").append(profile.userId)
       // document.getElementById("statusMessage").append(profile.statusMessage)
       document.getElementById("displayName").append(profile.displayName)
