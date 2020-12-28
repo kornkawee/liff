@@ -18,10 +18,9 @@
   <img id="pictureUrl">
   <p id="userId"><b>userId:</b> </p>
   <p id="displayName"><b>displayName:</b> </p>
-  <p id="name"><b>name:</b> </p
-  <p id="statusMessage"><b>statusMessage:</b> </p>
+  <p id="name"><b>name:</b> </p <p id="statusMessage"><b>statusMessage:</b> </p>
 
-  
+
   <p id="decodedIDToken"><b>email:</b> </p>
   <p id="type"><b>type:</b> </p>
   <p id="viewType"><b>viewType:</b> </p>
@@ -68,37 +67,37 @@
     }
 
     function openWindow() {
-    liff.openWindow({
-url:"https://whatwebcando.today",
-external: true
-    })
+      liff.openWindow({
+        url: "https://whatwebcando.today",
+        external: true
+      })
     }
 
     async function getFriendship() {
       const friend = await liff.getFriendship()
       document.getElementById("friendship").append(friend.friendFlag)
-      if(!friend.friendFlag){
-        if(confirm("คุณยังไม่ได้เพิ่ม ฺนะ เป็นเพื่อน จะเพิ่มเลยไหม?")) {
+      if (!friend.friendFlag) {
+        if (confirm("คุณยังไม่ได้เพิ่ม ฺนะ เป็นเพื่อน จะเพิ่มเลยไหม?")) {
           window.location = "@678yiwln"
         }
       }
     }
 
     async function sendMsg() {
-      if(liff.getContext().type !== "none"){
-await liff.sendMessages([
-{
-    type:'text',
-    text:'Hello, World!'
-  },
-  {
-  "type":"sticker",
-  "stickerId": 1,
-  "packageId":1 
-}
+      if (liff.getContext().type !== "none") {
+        await liff.sendMessages([
+          {
+            type: 'text',
+            text: 'Hello, World!'
+          },
+          {
+            "type": "sticker",
+            "stickerId": 2,
+            "packageId": 1
+          }
 
-])
-alert("Message sent")
+        ])
+        alert("Message sent success")
       }
     }
 
@@ -124,7 +123,7 @@ alert("Message sent")
       document.getElementById("displayName").append(profile.displayName)
       document.getElementById("decodedIDToken").append(liff.getDecodedIDToken().email)
 
-  
+
     }
 
 
