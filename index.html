@@ -15,12 +15,12 @@
   <p id="accessToken"><b>AccessToken:</b> </p>
   <p id="isInClient"><b>isInClient:</b> </p>
 
-  
+
   <img id="pictureUrl">
   <p id="userId"><b>userId:</b> </p>
   <p id="displayName"><b>displayName:</b> </p>
   <!-- <p id="name"><b>name:</b> </p>  -->
-    <p id="statusMessage"><b>statusMessage:</b> </p>
+  <p id="statusMessage"><b>statusMessage:</b> </p>
 
 
   <p id="decodedIDToken"><b>email:</b> </p>
@@ -132,7 +132,7 @@
       const profile = await liff.getProfile()
       document.getElementById("pictureUrl").src = profile.pictureUrl
       document.getElementById("userId").append(profile.userId)
-      // document.getElementById("statusMessage").append(profile.statusMessage)
+      document.getElementById("statusMessage").append(profile.statusMessage)
       document.getElementById("displayName").append(profile.displayName)
       // document.getElementById("decodedIDToken").append(liff.getDecodedIDToken().email)
 
