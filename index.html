@@ -35,7 +35,7 @@
 
   <p id="universalLink1"><b>Universal Link:</b> </p>
   <p id="universalLink2"><b>Universal Link with Query params:</b> </p>
-  <p><a href="liff/path/?param=9">Link to Path</a></p>
+  <!-- <p><a href="liff/path/?param=9">Link to Path</a></p> -->
 
   <button id="btnMsg" onclick="sendMsg()">Send Message</button>
   <button id="btnShare" onclick="shareMsg()">Share Target Picker</button>
@@ -56,6 +56,7 @@
   <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
   <script src="https://static.line-scdn.net/liff/edge/2.1/liff.js"></script> -->
   <script>
+
     function createUniversalLink() {
       const link1 = liff.permanentLink.createUrl().
       document.getElementById('universalLink1').append(link1)
