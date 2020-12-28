@@ -116,6 +116,7 @@ alert("Message sent")
 
     }
 
+
     async function getUserProfile() {
       const profile = await liff.getProfile()
       // await liff.getProfile()
@@ -123,7 +124,7 @@ alert("Message sent")
       document.getElementById("userId").append(profile.userId)
       document.getElementById("statusMessage").append(profile.statusMessage)
       document.getElementById("displayName").append(profile.displayName)
-      document.getElementById("decodedIDToken").append(liff.getDecodedIDToken().email)
+      // document.getElementById("decodedIDToken").append(liff.getDecodedIDToken().email)
 
   
     }
@@ -152,8 +153,8 @@ alert("Message sent")
       await liff.init({ liffId: "1655529961-WB7e0yAE" })
       getEnvironment()
       getUserProfile()
-      getContext()
-      getFriendship()
+      // getContext()
+      // getFriendship()
       // createUniversalLink()
     }
     main()
