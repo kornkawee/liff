@@ -49,8 +49,8 @@
     console.log("Hello World!")
   </script> -->
 
-  <script src="https://static.line-scdn.net/liff/edge/versions/2.6.0/sdk.js"></script>
-  <!-- <script src="https://static.line-scdn.net/liff/edge/2.1/liff.js"></script> -->
+  <!-- <script src="https://static.line-scdn.net/liff/edge/versions/2.6.0/sdk.js"></script> -->
+  <script src="https://static.line-scdn.net/liff/edge/2.1/liff.js"></script>
   <script>
     function createUniversalLink() {
     }
@@ -118,6 +118,7 @@ alert("Message sent")
 
     async function getUserProfile() {
       const profile = await liff.getProfile()
+      // await liff.getProfile()
       document.getElementById("pictureUrl").src = profile.pictureUrl
       document.getElementById("userId").append(profile.userId)
       document.getElementById("statusMessage").append(profile.statusMessage)
@@ -133,7 +134,7 @@ alert("Message sent")
       document.getElementById("language").append(liff.getLanguage())
       document.getElementById("version").append(liff.getVersion())
       document.getElementById("accessToken").append(liff.getAccessToken())
-      document.getElementById("isInClient").append(liff.IsInClient())
+      document.getElementById("isInClient").append(liff.isInClient())
 
       if (liff.isInClient()) {
         document.getElementById("btnLogOut").style.display = "none"
