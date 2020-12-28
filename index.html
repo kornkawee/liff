@@ -58,12 +58,14 @@
     }
 
     function logOut() {
-      // liff.logOut()
+      if (liff.isLoggedIn()) {
+  liff.logout();
+}
       // window.location.reload()
     }
 
     function closed() {
-      liff.closeWindow()
+      liff.closeWindow();
     }
 
     async function scanCode() {
