@@ -50,6 +50,7 @@
   </script> -->
 
   <script src="https://static.line-scdn.net/liff/edge/versions/2.6.0/sdk.js"></script>
+  <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
   <!-- <script src="https://static.line-scdn.net/liff/edge/versions/2.3.0/sdk.js"></script>
   <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
   <script src="https://static.line-scdn.net/liff/edge/2.1/liff.js"></script> -->
@@ -128,11 +129,11 @@
 
     async function getUserProfile() {
       const profile = await liff.getProfile()
-      document.getElementById("pictureUrl").src = profile.pictureUrl
+      // document.getElementById("pictureUrl").src = profile.pictureUrl
       document.getElementById("userId").append(profile.userId)
-      document.getElementById("statusMessage").append(profile.statusMessage)
+      // document.getElementById("statusMessage").append(profile.statusMessage)
       document.getElementById("displayName").append(profile.displayName)
-      document.getElementById("decodedIDToken").append(liff.getDecodedIDToken().email)
+      // document.getElementById("decodedIDToken").append(liff.getDecodedIDToken().email)
 
 
     }
