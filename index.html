@@ -119,8 +119,6 @@ alert("Message sent")
 
     async function getUserProfile() {
       const profile = await liff.getProfile()
-      // await liff.getProfile()
-     
       document.getElementById("pictureUrl").src = profile.pictureUrl
       document.getElementById("userId").append(profile.userId)
       document.getElementById("statusMessage").append(profile.statusMessage)
@@ -154,7 +152,7 @@ alert("Message sent")
       await liff.init({ liffId: "1655529961-WB7e0yAE" })
       getEnvironment()
       getUserProfile()
-      // getContext()
+      getContext()
       // getFriendship()
       // createUniversalLink()
     }
