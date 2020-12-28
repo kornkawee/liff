@@ -121,19 +121,13 @@
     }
 
     async function getUserProfile() {
-      // const profile = await liff.getProfile()
-      // document.getElementById("pictureUrl").src = profile.pictureUrl
-      // document.getElementById("userId").append(profile.userId)
-      // document.getElementById("statusMessage").append(profile.statusMessage)
-      // document.getElementById("displayName").append(profile.displayName)
-      // document.getElementById("decodedIDToken").append(liff.getDecodedIDToken().email)
-      liff.getProfile()
-.then(profile => {
-  const name = profile.displayName
-})
-.catch((err) => {
-  console.log('error', err);
-});
+      const profile = await liff.getProfile()
+      document.getElementById("pictureUrl").src = profile.pictureUrl
+      document.getElementById("userId").append(profile.userId)
+      document.getElementById("statusMessage").append(profile.statusMessage)
+      document.getElementById("displayName").append(profile.displayName)
+      document.getElementById("decodedIDToken").append(liff.getDecodedIDToken().email)
+
 
     }
 
@@ -159,7 +153,7 @@
     async function main() {
       // alert("LINE Developers x Skooldio")
       await liff.init({ liffId: "1655529961-WB7e0yAE" })
-
+      document.getElementById("isLoggedIn").append(liff.isLoggedIn())
       if (liff.isLoggedIn()) {
         getUserProfile()
         getEnvironment()
