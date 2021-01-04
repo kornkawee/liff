@@ -112,7 +112,7 @@
         if (confirm("คุณยังไม่ได้เพิ่ม bot เป็นเพื่อน จะเพิ่มเลยไหม?")) {
           window.location = "https://line.me/R/ti/p/@016fqrez"
         }
-      } else if (friend.friendFlag) {
+      }else if(friend.friendFlag){
         alert("คุณได้เพิ่ม bot เป็นเพื่อนแล้ว")
       }
     }
@@ -131,30 +131,28 @@
             "packageId": 1
           },
           {
-            "type": "flex",
-            "altText": "This is a Flex Message",
-            "contents": {
-              "type": "bubble",
-              "direction": "ltr",
-              "styles": {
-                "header": {
-                  "backgroundColor": "#ffaaaa",
-                },
-                "body": {
-                  "backgroundColor": "#aaffaa",
-                  "separator": true,
-                  "separatorColor": "#efefef"
-                },
-                "footer": {
-                  "backgroundColor": "#aaaaff"
-                }
-              },
-              "header": {},
-              "hero": {},
-              "body": {},
-              "footer": {}
-            }
-          }
+   "type": "flex",
+   "altText": "This is a Flex Message",
+   "contents": {
+    "type": "bubble",
+    "body": {
+     "type": "box",
+     "layout": "vertical",
+     "contents": [
+      {
+       "type": "button",
+       "style": "primary",
+       "height": "sm",
+       "action": {
+        "type": "uri",
+        "label": "Add to Cart",
+        "uri": "https://developers.line.me"
+       }
+      }
+     ]
+    }
+   }
+  }
 
         ])
         alert("Message sent success")
