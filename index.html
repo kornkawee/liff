@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
   <title>My LIFF app</title>
   <link rel="stylesheet" href="css/style.css" media="all">
+  <!-- <script>
+    document.write('<link rel="stylesheet" href="css/style.css?cache='+ new Date().getTime()+'">')
+  </script> -->
 </head>
 
 <body>
@@ -109,6 +112,8 @@
         if (confirm("คุณยังไม่ได้เพิ่ม bot เป็นเพื่อน จะเพิ่มเลยไหม?")) {
           window.location = "https://line.me/R/ti/p/@016fqrez"
         }
+      }else if(friend.friendFlag){
+        alert("คุณได้เพิ่ม bot เป็นเพื่อนแล้ว")
       }
     }
 
