@@ -72,11 +72,65 @@
 
     async function shareMsg() {
       await liff.shareTargetPicker([
-        // {
-        //   "type": "text",
-        //   "text": "This message was sent by shareTargetPicker"
-        // }
         {
+          "type": "text",
+          "text": "This message was sent by shareTargetPicker"
+        }
+      ])
+    }
+
+    function logOut() {
+      // if (liff.isLoggedIn()) {
+      //   liff.logout();
+      // }
+      liff.logout();
+      window.location.reload()
+    }
+
+    function closed() {
+      liff.closeWindow()
+    }
+
+    async function scanCode() {
+      const result = await liff.scanCode()
+      document.getElementById("scanCode").append(result.value)
+    }
+
+    function openWindow() {
+      liff.openWindow({
+        url: "https://whatwebcando.today",
+        external: true
+        //external เปิดbrowserนอกแอป!
+      })
+    }
+
+    //add friend bot
+    async function getFriendship() {
+      const friend = await liff.getFriendship()
+      document.getElementById("friendship").append(friend.friendFlag)
+      if (!friend.friendFlag) {
+        if (confirm("คุณยังไม่ได้เพิ่ม bot เป็นเพื่อน จะเพิ่มเลยไหม?")) {
+          window.location = "https://line.me/R/ti/p/@016fqrez"
+        }
+      }else if(friend.friendFlag){
+        alert("คุณได้เพิ่ม bot เป็นเพื่อนแล้ว")
+      }
+    }
+
+
+    async function sendMsg() {
+      if (liff.getContext().type !== "none") {
+        await liff.sendMessages([
+          // {
+          //   type: 'text',
+          //   text: 'Hello, World!'
+          // },
+          // {
+          //   type: "sticker",
+          //   "stickerId": 2,
+          //   "packageId": 1
+          // }
+          {
   "type": "bubble",
   "header": {
     "type": "box",
@@ -145,61 +199,6 @@
     }
   }
 }
-      ])
-    }
-
-    function logOut() {
-      // if (liff.isLoggedIn()) {
-      //   liff.logout();
-      // }
-      liff.logout();
-      window.location.reload()
-    }
-
-    function closed() {
-      liff.closeWindow()
-    }
-
-    async function scanCode() {
-      const result = await liff.scanCode()
-      document.getElementById("scanCode").append(result.value)
-    }
-
-    function openWindow() {
-      liff.openWindow({
-        url: "https://whatwebcando.today",
-        external: true
-        //external เปิดbrowserนอกแอป!
-      })
-    }
-
-    //add friend bot
-    async function getFriendship() {
-      const friend = await liff.getFriendship()
-      document.getElementById("friendship").append(friend.friendFlag)
-      if (!friend.friendFlag) {
-        if (confirm("คุณยังไม่ได้เพิ่ม bot เป็นเพื่อน จะเพิ่มเลยไหม?")) {
-          window.location = "https://line.me/R/ti/p/@016fqrez"
-        }
-      }else if(friend.friendFlag){
-        alert("คุณได้เพิ่ม bot เป็นเพื่อนแล้ว")
-      }
-    }
-
-
-    async function sendMsg() {
-      if (liff.getContext().type !== "none") {
-        await liff.sendMessages([
-          {
-            type: 'text',
-            text: 'Hello, World!'
-          },
-          {
-            type: "sticker",
-            "stickerId": 2,
-            "packageId": 1
-          }
-
         ])
         alert("Message sent success")
       }
