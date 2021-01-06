@@ -520,16 +520,17 @@
       await liff.init({ liffId: "1655529961-WB7e0yAE" })
       document.getElementById("isLoggedIn").append(liff.isLoggedIn())
 
-    // if (liff.isLoggedIn()) {
-      //   getUserProfile()
-      //   getEnvironment()
-      //   getContext()
-      //   getFriendship()
-      //   createUniversalLink()
-      // } else {
+    if (liff.isLoggedIn()) {
+        getUserProfile()
+        getEnvironment()
+        getContext()
+        getFriendship()
+        createUniversalLink()
+        shareTargetPicker()
+      } else {
 
-      //   liff.login()
-      // }
+        liff.login()
+      }
 
       await liff.shareTargetPicker([
       {
@@ -601,8 +602,7 @@
   }
 }
         }
-      ])
-      alert("Message sent success")
+      ])   
     }
     main()
   </script>
