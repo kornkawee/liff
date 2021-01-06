@@ -519,16 +519,19 @@
       // alert("LINE Developers x Skooldio")
       await liff.init({ liffId: "1655529961-WB7e0yAE" })
       document.getElementById("isLoggedIn").append(liff.isLoggedIn())
-     
 
-      if (liff.isLoggedIn()) {
+    if (liff.isLoggedIn()) {
         getUserProfile()
         getEnvironment()
         getContext()
         getFriendship()
         createUniversalLink()
+      } else {
 
-        await liff.shareTargetPicker([
+        liff.login()
+      }
+
+      await liff.shareTargetPicker([
       {
             "type":"flex",
             "altText": "flex Message",
@@ -597,14 +600,9 @@
     ]
   }
 }
-        }  
+        }
       ])
-     
-      } else {
-
-        liff.login()
-      }
-
+      alert("Message sent success")
     }
     main()
   </script>
