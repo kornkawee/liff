@@ -526,84 +526,84 @@
         getContext()
         getFriendship()
         createUniversalLink()
-        // shareTargetPicker()
-        shareMsg()
+        shareTargetPicker()
+        // shareMsg()
       } else {
 
         liff.login()
       }
 
-//       await liff.shareTargetPicker([
-//       {
-//             "type":"flex",
-//             "altText": "flex Message",
-//             "contents":{
-//   "type": "bubble",
-//   "size": "mega",
-//   "hero": {
-//     "type": "image",
-//     "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_2_restaurant.png",
-//     "size": "full",
-//     "aspectRatio": "20:13",
-//     "aspectMode": "cover",
-//     "action": {
-//       "type": "uri",
-//       "uri": "https://linecorp.com"
-//     }
-//   },
-//   "body": {
-//     "type": "box",
-//     "layout": "vertical",
-//     "spacing": "md",
-//     "action": {
-//       "type": "uri",
-//       "uri": "https://linecorp.com"
-//     },
-//     "contents": [
-//       {
-//         "type": "text",
-//         "text": "Share Flex API",
-//         "size": "xl",
-//         "weight": "bold"
-//       },
-//       {
-//         "type": "box",
-//         "layout": "vertical",
-//         "spacing": "sm",
-//         "contents": []
-//       },
-//       {
-//         "type": "text",
-//         "text": "Test Share Flex Message API",
-//         "wrap": true,
-//         "color": "#aaaaaa",
-//         "size": "md"
-//       }
-//     ]
-//   },
-//   "footer": {
-//     "type": "box",
-//     "layout": "vertical",
-//     "contents": [
-//       {
-//         "type": "spacer",
-//         "size": "xxl"
-//       },
-//       {
-//         "type": "button",
-//         "style": "primary",
-//         "color": "#905c44",
-//         "action": {
-//           "type": "uri",
-//           "label": "Share ",
-//           "uri": "https://liff.line.me/1655529961-WB7e0yAE"
-//         }
-//       }
-//     ]
-//   }
-// }
-//         }
-//       ])   
+      await liff.shareTargetPicker([
+      {
+            "type":"flex",
+            "altText": "flex Message",
+            "contents":{
+  "type": "bubble",
+  "size": "mega",
+  "hero": {
+    "type": "image",
+    "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_2_restaurant.png",
+    "size": "full",
+    "aspectRatio": "20:13",
+    "aspectMode": "cover",
+    "action": {
+      "type": "uri",
+      "uri": "https://linecorp.com"
+    }
+  },
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "spacing": "md",
+    "action": {
+      "type": "uri",
+      "uri": "https://linecorp.com"
+    },
+    "contents": [
+      {
+        "type": "text",
+        "text": "Share Flex API",
+        "size": "xl",
+        "weight": "bold"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "sm",
+        "contents": []
+      },
+      {
+        "type": "text",
+        "text": "Test Share Flex Message API",
+        "wrap": true,
+        "color": "#aaaaaa",
+        "size": "md"
+      }
+    ]
+  },
+  "footer": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "spacer",
+        "size": "xxl"
+      },
+      {
+        "type": "button",
+        "style": "primary",
+        "color": "#905c44",
+        "action": {
+          "type": "uri",
+          "label": "Share ",
+          "uri": "https://liff.line.me/1655529961-WB7e0yAE"
+        }
+      }
+    ]
+  }
+}
+        }
+      ])   
     }
     main()
   </script>
