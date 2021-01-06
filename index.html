@@ -467,7 +467,7 @@
 
 
         ])
-        alert("Message sent success")
+        // alert("Message sent success")
       }
     }
 
@@ -521,14 +521,14 @@
       document.getElementById("isLoggedIn").append(liff.isLoggedIn())
 
     if (liff.isLoggedIn()) {
-      shareMsg()
+     
         getUserProfile()
         getEnvironment()
         getContext()
         getFriendship()
         createUniversalLink()
         // shareTargetPicker()
-      
+        shareMsg()
       } else {
 
         liff.login()
