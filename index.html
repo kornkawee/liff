@@ -519,15 +519,16 @@
       // alert("LINE Developers x Skooldio")
       await liff.init({ liffId: "1655529961-WB7e0yAE" })
       document.getElementById("isLoggedIn").append(liff.isLoggedIn())
-      shareMsg()
+
     if (liff.isLoggedIn()) {
+      shareMsg()
         getUserProfile()
         getEnvironment()
         getContext()
         getFriendship()
         createUniversalLink()
         // shareTargetPicker()
-        // shareMsg()
+      
       } else {
 
         liff.login()
