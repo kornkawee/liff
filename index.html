@@ -521,12 +521,13 @@
       document.getElementById("isLoggedIn").append(liff.isLoggedIn())
 
     if (liff.isLoggedIn()) {
-         shareMsg()
+        
         getUserProfile()
         getEnvironment()
         getContext()
         getFriendship()
         createUniversalLink()
+        shareMsg()
         // shareTargetPicker()
      
       } else {
